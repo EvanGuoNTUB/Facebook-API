@@ -1,0 +1,16 @@
+import facebook
+token = 'EAAE7QxJRF2wBALLSQJoh70aGYbFG7xNwt8SzoknxroeJ0N4NQ4KTZBaazO0Ni8lb1insg7R5LprXbnJ8Czv2LWxq8qJn9I5dSGBQWlyndv52eR46eKZAfhRIIZAAYy5KO1NDyZBXFqKTADp7OBLMsrAddGRExa9HupN9WborPuYSwGGvvgHXtSBhxQ0EXPYtptA96LrrroIZAO73ZAIFsSHH2oN3cn3ZCx8KrvBsvIZCZAAZDZD'
+graph = facebook.GraphAPI(access_token = token)
+me_info = graph.get_object('me')
+print(me_info)
+print('我的FB名字是:',me_info['name'])
+posts = graph.get_connections(id='me',connection_name='posts')
+print("共有",len(posts['data']),"篇文章")
+for index,each in enumerate(posts['data']):
+  print("#",index+1)
+  print('時間:',each['created_time'])
+  if 'story' in each:
+      print('描述:',each['story'])
+  if 'message' in each:
+      print('內容:',each['message'])
+  print('-'*30)
