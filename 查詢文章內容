@@ -1,5 +1,5 @@
 import facebook
-token = 'EAAE7QxJRF2wBALLSQJoh70aGYbFG7xNwt8SzoknxroeJ0N4NQ4KTZBaazO0Ni8lb1insg7R5LprXbnJ8Czv2LWxq8qJn9I5dSGBQWlyndv52eR46eKZAfhRIIZAAYy5KO1NDyZBXFqKTADp7OBLMsrAddGRExa9HupN9WborPuYSwGGvvgHXtSBhxQ0EXPYtptA96LrrroIZAO73ZAIFsSHH2oN3cn3ZCx8KrvBsvIZCZAAZDZD'
+token = '你的token'
 graph = facebook.GraphAPI(access_token = token)
 me_info = graph.get_object('me')
 print(me_info)
